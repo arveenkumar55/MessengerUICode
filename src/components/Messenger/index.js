@@ -43,7 +43,7 @@ export default function Messenger(props) {
         </div>
        }
        { (!isWeb || isMobile) &&
-        <div className="scrollable content">
+        <div className="scrollable content"  style= {{overflowY:"hidden"}}>
           <MessageList setMobileView= {setMobile} isMobile={isMobile}/>
         </div>
       }

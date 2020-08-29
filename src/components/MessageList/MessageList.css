@@ -2,4 +2,6 @@
   padding: 20px;
   padding-bottom: 70px;
   margin-bottom: 30px;
+  max-height: 500px;
+  overflow: auto;
 }

@@ -23,8 +23,9 @@
   font-size: 14px;
   height: 40px;
   background: none; */
+  border-radius: 30px;
   resize: none;
-  max-height: 150px;
+  max-height: 100px;
   border: 1px solid #999;
   outline: none;
   font: 18px sans-serif;
@@ -32,7 +33,6 @@
   width: 68%;
   padding: 8px 14px;
   box-sizing: border-box;
-
 }
 
 .compose-input::placeholder {
