@@ -4,7 +4,7 @@
   align-items: center;
   background: white;
   border-top: 1px solid #eeeef1;
-  /* position: fixed; */
+  position: fixed;
   width: calc(100% - 20px);
   bottom: 0px;
 }
@@ -14,14 +14,25 @@
     border: none;
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(20px);
+    margin-bottom: 2px;
   }
 }
 
 .compose-input {
-  flex: 1;
+  /* flex: 1;
   font-size: 14px;
   height: 40px;
-  background: none;
+  background: none; */
+  resize: none;
+  max-height: 150px;
+  border: 1px solid #999;
+  outline: none;
+  font: 18px sans-serif;
+  color: #333;
+  width: 68%;
+  padding: 8px 14px;
+  box-sizing: border-box;
+
 }
 
 .compose-input::placeholder {

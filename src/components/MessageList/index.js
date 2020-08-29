@@ -14,6 +14,8 @@ export default function MessageList(props) {
 
   useEffect(() => {
     getMessages();
+    var out = document.getElementById("message-list-container");
+    var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
   },[])
 
   
@@ -75,6 +77,30 @@ export default function MessageList(props) {
         },
         {
           id: 10,
+          author: 'orange',
+          message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
+          timestamp: new Date().getTime()
+        },
+        {
+          id: 11,
+          author: 'apple',
+          message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
+          timestamp: new Date().getTime()
+        },
+        {
+          id: 12,
+          author: 'orange',
+          message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
+          timestamp: new Date().getTime()
+        },
+        {
+          id: 13,
+          author: 'apple',
+          message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
+          timestamp: new Date().getTime()
+        },
+        {
+          id: 14,
           author: 'orange',
           message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
           timestamp: new Date().getTime()
@@ -158,12 +184,13 @@ export default function MessageList(props) {
         />
         </div>
 
-        <div className="message-list-container">{renderMessages()}</div>
+        <div id="message-list-container" className="message-list-container">{renderMessages()}</div>
 
         <Compose rightItems={[
-          <ToolbarButton key="photo" icon="ion-ios-camera" />,
-          <ToolbarButton key="image" icon="ion-ios-image" />,
-          <ToolbarButton key="audio" icon="ion-ios-mic" />,
+          <i className="fa fa-paper-plane" aria-hidden="true" style= {{fontSize: 28, color: "#007aff", paddingLeft:'40px'}}></i>
+          // <ToolbarButton key="photo" icon="ion-ios-camera" />,
+          // <ToolbarButton key="image" icon="ion-ios-image" />,
+          // <ToolbarButton key="audio" icon="ion-ios-mic" />,
           // <ToolbarButton key="money" icon="ion-ios-card" />,
           // <ToolbarButton key="games" icon="ion-logo-game-controller-b" />,
           // <ToolbarButton key="emoji" icon="ion-ios-happy" />
