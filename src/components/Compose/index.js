@@ -7,7 +7,10 @@ export default function Compose(props) {
 
   function sendMessage (e) {
     console.log('sendMessage called', e)
-    if (e.key === 'Enter') {
+    if(e.keyCode === 13 && e.ctrlKey) {
+      e.target.value = e.target.value + '\n'
+    }
+    else if (e.key === 'Enter') {
       props.sendMessage(e.target.value)
       e.target.value= ''
     }
