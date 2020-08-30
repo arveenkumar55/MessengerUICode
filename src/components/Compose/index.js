@@ -19,12 +19,14 @@ if ('onpropertychange' in textarea) { // IE
         <div style={{marginRight: '15px'}}>
         <ToolbarButton key="emoji" icon="ion-ios-happy" />
         </div>
-        <textarea  placeholder="Type a message, @name" className="compose-input" id="autosize" />
+        <div   style= {{padding: '10px', border: '1px solid #999', borderRadius :'30px', maxHeight: '100px',   width: 'inherit', background:'white'}}>
+        <textarea id="autosize" placeholder="Type a message, @name"   className="compose-input"/>
         {/* <input
           type="text"
           className="compose-input"
           placeholder="Type a message, @name"
         /> */}
+      </div>
       <div style={{right: 0}}>
       {
         props.rightItems
