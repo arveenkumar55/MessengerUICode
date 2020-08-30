@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import Toolbar from '../Toolbar';
+import ToolbarButton from '../ToolbarButton';
 import './Compose.css';
 
 export default function Compose(props) {
@@ -11,28 +13,37 @@ if ('onpropertychange' in textarea) { // IE
 }
    setTimeout(adjust.bind(textarea));
   },[])
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
     return (
-      <div className="compose">
-        <textarea rows="2" placeholder="Type a message, @name" className="compose-input" id="autosize"/>
+      <div className="compose" style= {isMobile ? {width:'90%'}: {width:'80%'}}>
+        <div style={{marginRight: '15px'}}>
+        <ToolbarButton key="emoji" icon="ion-ios-happy" />
+        </div>
+        <textarea  placeholder="Type a message, @name" className="compose-input" id="autosize" />
         {/* <input
           type="text"
           className="compose-input"
           placeholder="Type a message, @name"
         /> */}
-
-        {
-          props.rightItems
-        }
+      <div style={{right: 0}}>
+      {
+        props.rightItems
+      }
+    </div>
       </div>
     );
 }
 
 function adjust() {
+  console.log('this.scrollHeight',this.scrollHeight)
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
   var style = this.currentStyle || window.getComputedStyle(this);
   var boxSizing = style.boxSizing === 'border-box'
       ? parseInt(style.borderBottomWidth, 10) +
         parseInt(style.borderTopWidth, 10)
       : 0;
+      console.log('this.boxSizing',this.boxSizing)
+
   this.style.height = '';
-  this.style.height = (this.scrollHeight + boxSizing) + 'px';
+  this.style.height = ((this.scrollHeight-(isMobile ? 10: 20)) + boxSizing) + 'px';
 };

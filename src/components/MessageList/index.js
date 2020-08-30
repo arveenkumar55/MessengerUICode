@@ -187,13 +187,13 @@ export default function MessageList(props) {
         <div id="message-list-container" className="message-list-container">{renderMessages()}</div>
 
         <Compose rightItems={[
-          <i className="fa fa-paper-plane" aria-hidden="true" style= {{fontSize: 28, color: "#007aff", paddingLeft:'40px'}}></i>
+         <ToolbarButton key="audio" icon="ion-ios-mic"  />,
+          // <i className="fa fa-paper-plane" aria-hidden="true" style= {{fontSize: 28, color: "#007aff", paddingLeft:'40px'}}></i>
           // <ToolbarButton key="photo" icon="ion-ios-camera" />,
           // <ToolbarButton key="image" icon="ion-ios-image" />,
           // <ToolbarButton key="audio" icon="ion-ios-mic" />,
           // <ToolbarButton key="money" icon="ion-ios-card" />,
           // <ToolbarButton key="games" icon="ion-logo-game-controller-b" />,
-          // <ToolbarButton key="emoji" icon="ion-ios-happy" />
         ]}/>
       </div>
     );
