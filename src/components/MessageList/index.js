@@ -11,12 +11,16 @@ const MY_USER_ID = 'apple';
 
 export default function MessageList(props) {
   const [messages, setMessages] = useState([])
-
+  const [isFetchData, setFetchData] = useState(true)
   useEffect(() => {
-    getMessages();
-    var out = document.getElementById("message-list-container");
-    var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
-  },[])
+    console.log('isFetchData', isFetchData)
+    if(isFetchData) {
+      getMessages();
+      setFetchData(false)
+    }
+    var objDiv = document.getElementById("message-list-container");
+    objDiv.scrollTop = objDiv.scrollHeight;
+  })
 
   
   const getMessages = () => {
@@ -110,6 +114,8 @@ export default function MessageList(props) {
   }
 
   const sendMessage = (message) => {
+    var objDiv = document.getElementById("message-list-container");
+    objDiv.scrollTop = objDiv.scrollHeight;
     console.log('snedMessage Called', message)
     let tempMessages = messages;
     let newData = {
@@ -182,7 +188,6 @@ export default function MessageList(props) {
 
     return tempMessages;
   }
-
     return(
       <div className="message-list" >
         <div style= {{backgroundColor: 'lightgray'}}> 

@@ -13,6 +13,7 @@ export default function Compose(props) {
     else if (e.key === 'Enter') {
       props.sendMessage(e.target.value)
       e.target.value= ''
+
     }
   }
 
