@@ -109,6 +109,21 @@ export default function MessageList(props) {
       setMessages([...messages, ...tempMessages])
   }
 
+  const sendMessage = (message) => {
+    console.log('snedMessage Called', message)
+    let tempMessages = messages;
+    let newData = {
+      id: messages.length+1,
+      author: 'orange',
+      message:message,
+      timestamp: new Date().getTime()
+    }
+    console.log('tempMessages',tempMessages.length)
+    // tempMessages.push(newData)
+    console.log('tempMessages',tempMessages.length)
+    setMessages(messages.concat(newData))
+  }
+
   const renderMessages = () => {
     let i = 0;
     let messageCount = messages.length;
@@ -186,9 +201,9 @@ export default function MessageList(props) {
 
         <div id="message-list-container" className="message-list-container">{renderMessages()}</div>
 
-        <Compose rightItems={[
-         <ToolbarButton key="audio" icon="ion-ios-mic"  />,
-          // <i className="fa fa-paper-plane" aria-hidden="true" style= {{fontSize: 28, color: "#007aff", paddingLeft:'40px'}}></i>
+        <Compose sendMessage= {sendMessage} rightItems={[
+        //  <ToolbarButton key="audio" icon="ion-ios-mic"  />,
+          <i className="fa fa-paper-plane" aria-hidden="true" style= {{fontSize: 28, color: "#007aff", paddingLeft:'5px'}}></i>
           // <ToolbarButton key="photo" icon="ion-ios-camera" />,
           // <ToolbarButton key="image" icon="ion-ios-image" />,
           // <ToolbarButton key="audio" icon="ion-ios-mic" />,

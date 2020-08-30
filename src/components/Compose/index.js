@@ -4,6 +4,14 @@ import ToolbarButton from '../ToolbarButton';
 import './Compose.css';
 
 export default function Compose(props) {
+
+  function sendMessage (e) {
+    console.log('sendMessage called', e)
+    if (e.key === 'Enter') {
+      props.sendMessage(e.target.value)
+    }
+  }
+
   useEffect(() => {
     var textarea = document.getElementById("autosize");
 if ('onpropertychange' in textarea) { // IE
@@ -20,14 +28,14 @@ if ('onpropertychange' in textarea) { // IE
         <ToolbarButton key="emoji" icon="ion-ios-happy" />
         </div>
         <div   style= {{padding: '10px', border: '1px solid #999', borderRadius :'30px', maxHeight: '100px',   width: 'inherit', background:'white'}}>
-        <textarea id="autosize" placeholder="Type a message, @name"   className="compose-input"/>
+        <textarea id="autosize" placeholder="Type a message, @name"   className="compose-input" onKeyUp = {sendMessage} />
         {/* <input
           type="text"
           className="compose-input"
           placeholder="Type a message, @name"
         /> */}
       </div>
-      <div style={{right: 0}}>
+      <div style={{right: 0}} onClick={()=>{props.sendMessage(document.getElementById("autosize").value)}}>
       {
         props.rightItems
       }
