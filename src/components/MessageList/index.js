@@ -14,6 +14,8 @@ export default function MessageList(props) {
   const [isFetchData, setFetchData] = useState(true)
   useEffect(() => {
     console.log('isFetchData', isFetchData)
+    // console.log('window.innerWidth', window.innerHeight)
+    console.log('window.outerHeight', window.outerHeight)
     if(isFetchData) {
       getMessages();
       setFetchData(false)
@@ -204,7 +206,7 @@ export default function MessageList(props) {
         />
         </div>
 
-        <div id="message-list-container" className="message-list-container">{renderMessages()}</div>
+        <div id="message-list-container" className="message-list-container" style={{maxHeight:  (window.outerHeight-150) + 'px'}}>{renderMessages()}</div>
 
         <Compose sendMessage= {sendMessage} rightItems={[
         //  <ToolbarButton key="audio" icon="ion-ios-mic"  />,
