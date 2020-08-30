@@ -4,7 +4,7 @@
   align-items: center;
   background: white;
   border-top: 1px solid #eeeef1;
-  position: fixed;
+  /* position: fixed; */
   bottom: 0px;
 }
 
@@ -24,7 +24,7 @@
   background: none; */
   /* border-radius: 30px; */
   resize: none;
-  max-height: 100px;
+  max-height: 70px;
   /* border: 1px solid #999; */
   /* outline: none; */
   font: 18px sans-serif;

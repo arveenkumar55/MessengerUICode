@@ -28,11 +28,12 @@ if ('onpropertychange' in textarea) { // IE
   },[])
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
     return (
-      <div className="compose" style= {isMobile ? {width:'90%'}: {width:'80%'}}>
-        <div style={{marginRight: '15px'}}>
+      <div class="fixed-bottom" style={{left: '360px', right: '25px'}}> 
+      <div className="compose">
+        <div style={{marginRight: '5px', marginLeft: '5px'}}>
         <ToolbarButton key="emoji" icon="ion-ios-happy" />
         </div>
-        <div   style= {{padding: '10px', border: '1px solid #999', borderRadius :'30px', maxHeight: '100px',   width: 'inherit', background:'white'}}>
+        <div   style= {{padding: '10px', border: '1px solid #999', borderRadius :'30px', maxHeight: '100px',   width: '100%', background:'white'}}>
         <textarea id="autosize" placeholder="Type a message, @name"   className="compose-input" onKeyUp = {sendMessage} />
         {/* <input
           type="text"
@@ -48,6 +49,7 @@ if ('onpropertychange' in textarea) { // IE
         props.rightItems
       }
     </div>
+      </div>
       </div>
     );
 }
