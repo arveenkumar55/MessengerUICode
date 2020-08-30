@@ -9,6 +9,7 @@ export default function Compose(props) {
     console.log('sendMessage called', e)
     if (e.key === 'Enter') {
       props.sendMessage(e.target.value)
+      e.target.value= ''
     }
   }
 
@@ -35,7 +36,10 @@ if ('onpropertychange' in textarea) { // IE
           placeholder="Type a message, @name"
         /> */}
       </div>
-      <div style={{right: 0}} onClick={()=>{props.sendMessage(document.getElementById("autosize").value)}}>
+      <div style={{right: 0}} 
+      onClick={()=>{
+        props.sendMessage(document.getElementById("autosize").value) 
+        document.getElementById("autosize").value = ''}}>
       {
         props.rightItems
       }
