@@ -28,7 +28,7 @@ if ('onpropertychange' in textarea) { // IE
   },[])
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
     return (
-      <div class="fixed-bottom" style={{left: '360px', right: '25px'}}> 
+      <div class="fixed-bottom" style={isMobile ? {left: '0px', right: '0px'} : {left: '360px', right: '25px'}}> 
       <div className="compose">
         <div style={{marginRight: '5px', marginLeft: '5px'}}>
         <ToolbarButton key="emoji" icon="ion-ios-happy" />
