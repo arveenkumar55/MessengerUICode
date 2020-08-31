@@ -63,54 +63,54 @@ export default function MessageList(props) {
           message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
           timestamp: new Date().getTime()
         },
-        {
-          id: 7,
-          author: 'orange',
-          message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
-          timestamp: new Date().getTime()
-        },
-        {
-          id: 8,
-          author: 'orange',
-          message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
-          timestamp: new Date().getTime()
-        },
-        {
-          id: 9,
-          author: 'apple',
-          message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
-          timestamp: new Date().getTime()
-        },
-        {
-          id: 10,
-          author: 'orange',
-          message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
-          timestamp: new Date().getTime()
-        },
-        {
-          id: 11,
-          author: 'apple',
-          message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
-          timestamp: new Date().getTime()
-        },
-        {
-          id: 12,
-          author: 'orange',
-          message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
-          timestamp: new Date().getTime()
-        },
-        {
-          id: 13,
-          author: 'apple',
-          message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
-          timestamp: new Date().getTime()
-        },
-        {
-          id: 14,
-          author: 'orange',
-          message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
-          timestamp: new Date().getTime()
-        },
+        // {
+        //   id: 7,
+        //   author: 'orange',
+        //   message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
+        //   timestamp: new Date().getTime()
+        // },
+        // {
+        //   id: 8,
+        //   author: 'orange',
+        //   message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
+        //   timestamp: new Date().getTime()
+        // },
+        // {
+        //   id: 9,
+        //   author: 'apple',
+        //   message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
+        //   timestamp: new Date().getTime()
+        // },
+        // {
+        //   id: 10,
+        //   author: 'orange',
+        //   message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
+        //   timestamp: new Date().getTime()
+        // },
+        // {
+        //   id: 11,
+        //   author: 'apple',
+        //   message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
+        //   timestamp: new Date().getTime()
+        // },
+        // {
+        //   id: 12,
+        //   author: 'orange',
+        //   message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
+        //   timestamp: new Date().getTime()
+        // },
+        // {
+        //   id: 13,
+        //   author: 'apple',
+        //   message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
+        //   timestamp: new Date().getTime()
+        // },
+        // {
+        //   id: 14,
+        //   author: 'orange',
+        //   message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
+        //   timestamp: new Date().getTime()
+        // },
       ]
       setMessages([...messages, ...tempMessages])
   }
@@ -206,9 +206,9 @@ export default function MessageList(props) {
         />
         </div>
 
-        <div id="message-list-container" className="message-list-container" style={{maxHeight: '700px'}}>{renderMessages()}</div>
-
-        <Compose sendMessage= {sendMessage} rightItems={[
+        <div id="message-list-container" className="message-list-container" style={{maxHeight: '650px'}}>
+          {renderMessages()}
+          <Compose sendMessage= {sendMessage} rightItems={[
         //  <ToolbarButton key="audio" icon="ion-ios-mic"  />,
           <i className="fa fa-paper-plane" aria-hidden="true" style= {{fontSize: 28, color: "#007aff", paddingLeft:'5px'}}></i>
           // <ToolbarButton key="photo" icon="ion-ios-camera" />,
@@ -217,6 +217,7 @@ export default function MessageList(props) {
           // <ToolbarButton key="money" icon="ion-ios-card" />,
           // <ToolbarButton key="games" icon="ion-logo-game-controller-b" />,
         ]}/>
+        </div>
       </div>
     );
 }
