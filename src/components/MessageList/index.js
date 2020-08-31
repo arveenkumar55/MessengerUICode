@@ -206,7 +206,7 @@ export default function MessageList(props) {
         />
         </div>
 
-        <div id="message-list-container" className="message-list-container" style={{maxHeight: '650px'}}>
+        <div id="message-list-container" className="message-list-container" style={{maxHeight: '700px'}}>
           {renderMessages()}
           <Compose sendMessage= {sendMessage} rightItems={[
         //  <ToolbarButton key="audio" icon="ion-ios-mic"  />,
